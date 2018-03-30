@@ -12,9 +12,10 @@ public class ConnectDB {
 	public static Connection getConnection() {
 
 		try {
-			if (connection == null) {
+			if (connection == null) 
 				connection = DriverManager.getConnection(jdbcUrl);
-			}
+			if(connection.isClosed())
+				connection = DriverManager.getConnection(jdbcUrl);
 			return connection;
 
 		} catch (SQLException e) {

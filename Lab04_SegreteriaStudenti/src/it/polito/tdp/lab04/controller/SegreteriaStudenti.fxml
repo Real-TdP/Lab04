@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="442.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
+<BorderPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
    <top>
       <Label text="Lab3_Segreteria Studenti" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="10.0" />
          </BorderPane.margin></Label>
    </top>
+   <center>
+      <VBox prefHeight="376.0" prefWidth="460.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Corso:" />
+                  <ChoiceBox fx:id="choiceC" prefHeight="25.0" prefWidth="82.0" value="Generico" />
+                  <TextField fx:id="txtNomeCorso" editable="false" prefHeight="25.0" prefWidth="307.0" promptText="Nome Corso Scelto..." />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#btnFindIscritti" text="Cerca iscritti corso " />
+            <HBox spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Studente" />
+                  <TextField fx:id="txtMatricola" promptText="Matricola..." />
+                  <Button mnemonicParsing="false" onAction="#btnComplete" text="√" />
+                  <TextField fx:id="txtNome" editable="false" promptText="Nome..." />
+                  <TextField fx:id="txtCognome" editable="false" promptText="Cognome..." />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnCercaCorsi" prefHeight="25.0" prefWidth="116.0" text="Cerca Corsi">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#btnIscrivi" prefHeight="25.0" prefWidth="122.0" text="Iscrivi">
+                     <HBox.margin>
+                        <Insets left="180.0" right="20.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <TextArea fx:id="txtArea" editable="false" />
+            <HBox alignment="TOP_RIGHT">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnReset" prefHeight="25.0" prefWidth="90.0" text="Reset" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
 </BorderPane>
